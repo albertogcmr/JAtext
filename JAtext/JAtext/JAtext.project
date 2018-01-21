@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="JAtext" Version="10.0.0" InternalType="Console">
-  <VirtualDirectory Name="Includes">
-    <File Name="Includes/appdata.h"/>
-    <File Name="Includes/JAtext_menu.h"/>
-  </VirtualDirectory>
   <Plugins>
     <Plugin Name="qmake">
       <![CDATA[00010001N0005Debug000000000000]]>
     </Plugin>
   </Plugins>
+  <VirtualDirectory Name="Includes">
+    <File Name="Includes/JAtext_Main.h"/>
+    <File Name="Includes/appdata.h"/>
+    <File Name="Includes/JAtext_menu.h"/>
+  </VirtualDirectory>
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="Source">
+    <File Name="Source/JAtext_Main.c"/>
     <File Name="Source/JAtext_menu.c"/>
     <File Name="Source/appdata.c"/>
     <File Name="Source/main.c"/>
@@ -29,6 +31,7 @@
     <Configuration Name="Debug" CompilerType="gnu gcc" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-g;-O0;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
+        <IncludePath Value="./Includes"/>
       </Compiler>
       <Linker Options="" Required="yes"/>
       <ResourceCompiler Options="" Required="no"/>

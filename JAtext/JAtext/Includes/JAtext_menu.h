@@ -1,11 +1,17 @@
-#include <stdio.h>
+#ifndef _APPMENU_H_
+#define _APPMENU_H_
 
 
+// Displays the JAtext App main menu with the available operations
+char appMenu_mainMenu();
 
-//display main menu:
+// Displays the JAtext App subMenu1 with the available operations
+char appMenu_subMenu1();
 
+// Displays the JAtext App subMenu2 with the available operations
+char appMenu_subMenu2();
 
-//get main menu options:
+// Displays the JAtext App subMenu3 with the available operations
+char appMenu_subMenu3();
 
-
-
+#endif
