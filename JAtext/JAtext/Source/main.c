@@ -2,8 +2,9 @@
 
 int main(int argc, char** argv){
     
-    int getVersion();
-    void mainMenu(version);
+    //int getVersion();
+    //void mainMenu(version);
+    printf("Prueba");
             
     
     
