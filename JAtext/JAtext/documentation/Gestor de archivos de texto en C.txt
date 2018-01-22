@@ -1,0 +1,72 @@
+# Gestor de archivos de texto en C
+
+# 1. Objetivo
+Crear un programa para el tratamiento de archivos de texto. 
+
+# 2. Alcance
+Crear un programa en código C con pocas funcionalidades. 
+
+# 2.1 Duración
+Inicio: 15 Enero 2018
+Fin: 15 Marzo 2018. 
+
+# 3. Herramientas del entorno de desarrollo
+Codelite entorno de desarrollo C
+Github como repositorio
+Google Drive como gestor documental y compartición de archivos
+Hangouts para videollamada
+
+# 4. Lenguaje
+C
+
+# 5. Funcionalidades
+Añadir linea de texto al final del archivo. 
+Eliminar linea de texto al final del archivo. 
+Añadir linea de texto entre las lineas X y X+1. 
+Eliminar la linea de texto número X. 
+Contar número de carácteres, palabras y lineas. 
+Sustituir palabra por otra. 
+Contar el número de apariciones de una palabra. 
+Imprimir todo el texto del archivo por pantalla. 
+
+# 6. Interfaz
+Introducir opciones por linea de comandos. 
+Menú textual. 
+
+# 7. Ejemplos
+# Ejemplo de texto
+Lorem ipsum dolor sit amet. 
+Sed do eiusmod tempor. 
+Incididunt ut.
+
+# cuenta carácteres, palabras, lineas
+nc = 27 + 22 + 14
+np = 11
+nl = 3
+# sustituir palabra
+/> Jatext.exe -sustituir "Lorem" "XXXX"
+
+XXXX ipsum dolor sit amet. 
+Sed do eiusmod tempor. 
+Incididunt ut.
+
+# Funciones C
+Para recorrer un archivo de texto se va a ir linea por linea. Dicha linea convertida en string se pasará a las funciones correspondientes para su tratamiento: contar letras, contar palabras, sustituir palabras, etc...
+
+Contar letras: if( is_alphanum(c)) cl++ ## buscar función C. 
+			'a' < c < 'z' or 'A' < c < 'Z' or '0' < c < '9'
+Contar palabras: grupos de letras alfanuméricas separadas por espacio, coma, punto o dos puntos. 
+Contar lineas: fácil
+
+Sustituir palabra: 
+# int strncmp(const char *str1, const char *str2, size_t n)
+# https://www.tutorialspoint.com/c_standard_library/c_function_strncmp.htm 
+# https://stackoverflow.com/questions/31735199/find-a-replace-a-substring-c
+- x = longitud de la palabra origen
+- y = longitud de la palabra destino
+- scr = string origen
+- dst = string destino
+- palabra
+- i, j = índice que recorre scr, índice de dst. 
+Recorriendo scr carácter a carácter se compara la subcadena scr[i]-> scr[i+x] con palabra, si no coincide se copia el carácter en dst y pasamos al siguiente (i++) (j++). Si coinciden se copia palabra en destino y se incrementa el índice (i = i+x) (j = j+y)
+

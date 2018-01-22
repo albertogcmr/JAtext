@@ -5,21 +5,21 @@
 ## Debug
 ProjectName            :=JAtext
 ConfigurationName      :=Debug
-WorkspacePath          :=D:/Programacion/C/JAtext/JAtext
-ProjectPath            :=D:/Programacion/C/JAtext/JAtext/JAtext
+WorkspacePath          :=C:/Users/alberto/Documents/Alberto-C/jaTexto/JAtext/JAtext
+ProjectPath            :=C:/Users/alberto/Documents/Alberto-C/jaTexto/JAtext/JAtext/JAtext
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=Jesus
-Date                   :=21/01/2018
+User                   :=alberto
+Date                   :=22/01/2018
 CodeLitePath           :="C:/Program Files/CodeLite"
-LinkerName             :=gcc
-SharedObjectLinkerName :=gcc -shared -fPIC
+LinkerName             :=C:/MinGW/bin/g++.exe
+SharedObjectLinkerName :=C:/MinGW/bin/g++.exe -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
-PreprocessSuffix       :=.o.i
+PreprocessSuffix       :=.i
 DebugSwitch            :=-g 
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
@@ -31,12 +31,12 @@ OutputFile             :=./bin/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E 
+PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="JAtext.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
-RcCompilerName         :=windres
+RcCompilerName         :=C:/MinGW/bin/windres.exe
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)./Includes 
 IncludePCH             := 
@@ -49,20 +49,20 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := ar rcus
-CXX      := gcc
-CC       := gcc
+AR       := C:/MinGW/bin/ar.exe rcu
+CXX      := C:/MinGW/bin/g++.exe
+CC       := C:/MinGW/bin/gcc.exe
 CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
-AS       := as
+AS       := C:/MinGW/bin/as.exe
 
 
 ##
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/Source_JAtext_menu.c$(ObjectSuffix) $(IntermediateDirectory)/Source_appdata.c$(ObjectSuffix) $(IntermediateDirectory)/Source_main.c$(ObjectSuffix) $(IntermediateDirectory)/Source_JAtext_Main.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Source_JAtext_Main.c$(ObjectSuffix) $(IntermediateDirectory)/Source_main.c$(ObjectSuffix) $(IntermediateDirectory)/Source_JAtext_menu.c$(ObjectSuffix) $(IntermediateDirectory)/Source_appdata.c$(ObjectSuffix) 
 
 
 
@@ -93,8 +93,24 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/Source_JAtext_Main.c$(ObjectSuffix): Source/JAtext_Main.c $(IntermediateDirectory)/Source_JAtext_Main.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/alberto/Documents/Alberto-C/jaTexto/JAtext/JAtext/JAtext/Source/JAtext_Main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Source_JAtext_Main.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Source_JAtext_Main.c$(DependSuffix): Source/JAtext_Main.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Source_JAtext_Main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Source_JAtext_Main.c$(DependSuffix) -MM Source/JAtext_Main.c
+
+$(IntermediateDirectory)/Source_JAtext_Main.c$(PreprocessSuffix): Source/JAtext_Main.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Source_JAtext_Main.c$(PreprocessSuffix) Source/JAtext_Main.c
+
+$(IntermediateDirectory)/Source_main.c$(ObjectSuffix): Source/main.c $(IntermediateDirectory)/Source_main.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/alberto/Documents/Alberto-C/jaTexto/JAtext/JAtext/JAtext/Source/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Source_main.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Source_main.c$(DependSuffix): Source/main.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Source_main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Source_main.c$(DependSuffix) -MM Source/main.c
+
+$(IntermediateDirectory)/Source_main.c$(PreprocessSuffix): Source/main.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Source_main.c$(PreprocessSuffix) Source/main.c
+
 $(IntermediateDirectory)/Source_JAtext_menu.c$(ObjectSuffix): Source/JAtext_menu.c $(IntermediateDirectory)/Source_JAtext_menu.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "D:/Programacion/C/JAtext/JAtext/JAtext/Source/JAtext_menu.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Source_JAtext_menu.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/alberto/Documents/Alberto-C/jaTexto/JAtext/JAtext/JAtext/Source/JAtext_menu.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Source_JAtext_menu.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Source_JAtext_menu.c$(DependSuffix): Source/JAtext_menu.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Source_JAtext_menu.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Source_JAtext_menu.c$(DependSuffix) -MM Source/JAtext_menu.c
 
@@ -102,28 +118,12 @@ $(IntermediateDirectory)/Source_JAtext_menu.c$(PreprocessSuffix): Source/JAtext_
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Source_JAtext_menu.c$(PreprocessSuffix) Source/JAtext_menu.c
 
 $(IntermediateDirectory)/Source_appdata.c$(ObjectSuffix): Source/appdata.c $(IntermediateDirectory)/Source_appdata.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "D:/Programacion/C/JAtext/JAtext/JAtext/Source/appdata.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Source_appdata.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/alberto/Documents/Alberto-C/jaTexto/JAtext/JAtext/JAtext/Source/appdata.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Source_appdata.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Source_appdata.c$(DependSuffix): Source/appdata.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Source_appdata.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Source_appdata.c$(DependSuffix) -MM Source/appdata.c
 
 $(IntermediateDirectory)/Source_appdata.c$(PreprocessSuffix): Source/appdata.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Source_appdata.c$(PreprocessSuffix) Source/appdata.c
-
-$(IntermediateDirectory)/Source_main.c$(ObjectSuffix): Source/main.c $(IntermediateDirectory)/Source_main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "D:/Programacion/C/JAtext/JAtext/JAtext/Source/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Source_main.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Source_main.c$(DependSuffix): Source/main.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Source_main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Source_main.c$(DependSuffix) -MM Source/main.c
-
-$(IntermediateDirectory)/Source_main.c$(PreprocessSuffix): Source/main.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Source_main.c$(PreprocessSuffix) Source/main.c
-
-$(IntermediateDirectory)/Source_JAtext_Main.c$(ObjectSuffix): Source/JAtext_Main.c $(IntermediateDirectory)/Source_JAtext_Main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "D:/Programacion/C/JAtext/JAtext/JAtext/Source/JAtext_Main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Source_JAtext_Main.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Source_JAtext_Main.c$(DependSuffix): Source/JAtext_Main.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Source_JAtext_Main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Source_JAtext_Main.c$(DependSuffix) -MM Source/JAtext_Main.c
-
-$(IntermediateDirectory)/Source_JAtext_Main.c$(PreprocessSuffix): Source/JAtext_Main.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Source_JAtext_Main.c$(PreprocessSuffix) Source/JAtext_Main.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

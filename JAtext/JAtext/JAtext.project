@@ -13,6 +13,7 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="Source">
+    <File Name="documentation/Gestor de archivos de texto en C.txt"/>
     <File Name="Source/JAtext_Main.c"/>
     <File Name="Source/JAtext_menu.c"/>
     <File Name="Source/appdata.c"/>
