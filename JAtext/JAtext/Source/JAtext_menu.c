@@ -21,7 +21,7 @@
 char appMenu_mainMenu()
 {
 	//int version;
-	char option;
+	char option;  // hay un fallo xq no despliega el submenú 1 
 	
 	helpers_clearScreen();
 	

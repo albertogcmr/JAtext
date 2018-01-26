@@ -1,38 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext.workspace">
-  <int Value="3" Name="m_selectedTab"/>
+  <int Value="6" Name="m_selectedTab"/>
   <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Source\main.c" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="9" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Includes\JAtext_menu.h" Name="FileName"/>
+      <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Source\JAtext_menu.c" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
       <int Value="6" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Includes\appdata.h" Name="FileName"/>
-      <int Value="6" Name="FirstVisibleLine"/>
-      <int Value="15" Name="CurrentLine"/>
+      <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Source\JAtext_Main.c" Name="FileName"/>
+      <int Value="171" Name="FirstVisibleLine"/>
+      <int Value="5" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Source\appdata.c" Name="FileName"/>
+      <int Value="160" Name="FirstVisibleLine"/>
+      <int Value="7" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Includes\JAtext_menu.h" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Source\JAtext_menu.c" Name="FileName"/>
+      <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Includes\JAtext_Main.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Source\main.c" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\alberto\Documents\Alberto-C\jaTexto\JAtext\JAtext\JAtext\Includes\appdata.h" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
