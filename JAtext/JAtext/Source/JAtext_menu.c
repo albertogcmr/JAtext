@@ -133,3 +133,6 @@ char appMenu_subMenu3()
 	return option;
 }
 
+void a_menu(){
+    printf("\nMenu: \n");
+}

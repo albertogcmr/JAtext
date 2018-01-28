@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ JAtext - Debug ]----------"
-	@cd "JAtext" && "$(MAKE)" -f  "JAtext.mk"
+	@echo "----------Building project:[ JAtextedit - Release ]----------"
+	@cd "C:\Users\alberto\Documents\Alberto-C\JAtextedit" && "$(MAKE)" -f  "JAtextedit.mk"
 clean:
-	@echo "----------Cleaning project:[ JAtext - Debug ]----------"
-	@cd "JAtext" && "$(MAKE)" -f  "JAtext.mk" clean
+	@echo "----------Cleaning project:[ JAtextedit - Release ]----------"
+	@cd "C:\Users\alberto\Documents\Alberto-C\JAtextedit" && "$(MAKE)" -f  "JAtextedit.mk" clean

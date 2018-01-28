@@ -12,6 +12,9 @@ char appMenu_subMenu1();
 char appMenu_subMenu2();
 
 // Displays the JAtext App subMenu3 with the available operations
-char appMenu_subMenu3();
+char appMenu_subMenu3(); 
+
+// Despliega menú
+void a_menu();
 
 #endif

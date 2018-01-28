@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="JAtext" Database="" Version="10.0.0">
-  <Project Name="JAtext" Path="JAtext/JAtext.project" Active="Yes"/>
+  <Project Name="JAtext" Path="JAtext/JAtext.project" Active="No"/>
+  <Project Name="JAtextedit" Path="../../../JAtextedit/JAtextedit.project" Active="Yes"/>
   <BuildMatrix>
-    <WorkspaceConfiguration Name="Debug" Selected="yes">
+    <WorkspaceConfiguration Name="Debug" Selected="no">
       <Environment/>
       <Project Name="JAtext" ConfigName="Debug"/>
+      <Project Name="JAtextedit" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="JAtext" ConfigName="Release"/>
+      <Project Name="JAtextedit" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
