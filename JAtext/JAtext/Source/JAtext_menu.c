@@ -38,8 +38,8 @@ char appMenu_mainMenu()
 	printf("\n");
 	printf("0. Exit\n\n");
 	
-	//option = helpers_getOption();
-	option = getchar();
+	option = helpers_getOption();
+	//option = getchar(); Aqui estaba el problema del submenú 1 (no se le hacía fflush al getchar y te daba cosas raras)
     
 	return option;
 }

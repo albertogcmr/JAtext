@@ -1,6 +1,6 @@
-Release/Source_JAtext_menu.c.o: Source/JAtext_menu.c JAtext_menu.h \
- appdata.h
+Release/Source_JAtext_menu.c.o: Source/JAtext_menu.c \
+ Includes/JAtext_menu.h Includes/appdata.h
 
-JAtext_menu.h:
+Includes/JAtext_menu.h:
 
-appdata.h:
+Includes/appdata.h:

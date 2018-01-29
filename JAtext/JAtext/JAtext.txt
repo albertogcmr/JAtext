@@ -1,1 +1,1 @@
-./Debug/Source_appdata.c.o ./Debug/Source_main.c.o ./Debug/Source_JAtext_menu.c.o ./Debug/Source_JAtext_Main.c.o   
+./Release/Source_main.c.o ./Release/Source_JAtext_menu.c.o ./Release/Source_appdata.c.o ./Release/Source_JAtext_Main.c.o   
