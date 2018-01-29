@@ -32,7 +32,7 @@ char appMenu_mainMenu()
 	//printf("Library version: %d\n\n", version);
 	
 	printf("Please, select a menu option:\n\n");
-	printf("1. subMenu1 \n");
+	printf("1. Carga un archivo \n");
 	printf("2. subMenu2 \n");
 	printf("3. subMenu3 \n");
 	printf("\n");
