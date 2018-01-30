@@ -9,3 +9,6 @@ JAtext/.codelite/JAtext.tags
 *.project
 JAtext/Makefile
 *.session
+*.session
+*.tags
+*.db

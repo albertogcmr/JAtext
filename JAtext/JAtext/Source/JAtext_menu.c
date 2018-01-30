@@ -14,19 +14,18 @@
 
 /* 
  * Function:    appMenu_mainMenu
- * Description: Displays the UOCCar App application main menu with the available operations
+ * Description: Displays the JAtext App main menu with the available operations
  * Arguments:   ---
  * Returns:     The option the user selected.
  */
 char appMenu_mainMenu()
 {
 	//int version;
-	char option;  // hay un fallo xq no despliega el submenú 1 
+	char option;  
     
     appPrint_mainMenu();
 	
 	option = helpers_getOption();
-	//option = getchar(); Aqui estaba el problema del submenú 1 (no se le hacía fflush al getchar y te daba cosas raras)
     
 	return option;
 }
