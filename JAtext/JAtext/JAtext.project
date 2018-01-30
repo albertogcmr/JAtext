@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="JAtext" Version="10.0.0" InternalType="Console">
-  <VirtualDirectory Name="documentation">
-    <File Name="documentation/Gestor de archivos de texto en C.txt"/>
-  </VirtualDirectory>
   <Plugins>
     <Plugin Name="qmake">
       <![CDATA[00020001N0005Debug0000000000000001N0007Release000000000000]]>
     </Plugin>
   </Plugins>
+  <VirtualDirectory Name="documentation">
+    <File Name="documentation/Gestor de archivos de texto en C.txt"/>
+  </VirtualDirectory>
   <VirtualDirectory Name="Includes">
     <File Name="Includes/JAtext_Main.h"/>
     <File Name="Includes/appdata.h"/>
@@ -113,4 +113,6 @@
       </Completion>
     </Configuration>
   </Settings>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
 </CodeLite_Project>

@@ -1,0 +1,11 @@
+
+JAtext/.codelite/JAtext.tags
+*.project
+*.project
+*.session
+*.tags
+*.db
+*.exe
+*.project
+JAtext/Makefile
+*.session
