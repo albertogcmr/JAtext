@@ -12,3 +12,7 @@ JAtext/Makefile
 *.session
 *.tags
 *.db
+JAtext/.codelite/JAtext.session
+*.tags
+*.db
+*.mk

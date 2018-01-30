@@ -34,15 +34,16 @@ void appPrint_mainMenu(){
     
     helpers_clearScreen();	
 	//version = ops_getVersion();	
-	printf("\nWelcome to JAtext application! Version de Alberto\n");
-	printf("\n------------------------------\n\n");
+	printf("\nMenu principal:\n");
+	printf("==============\n\n");
     
 	printf("Please, select a menu option:\n\n");
-	printf("1. Carga un archivo \n");
-	printf("2. subMenu2 \n");
-	printf("3. subMenu3 \n");
+	printf("(1) Cargar archivo\n"); // no tiene submenu, pide nombre de archivo
+	printf("(2) Datos y metadatos del archivo\n"); //appMenu_subMenu1()
+	printf("(3) Edicion del archivo de texto\n"); //appMenu_subMenu2()
+	printf("(4) Operaciones sobre archivo\n"); //appMenu_subMenu3()
 	printf("\n");
-	printf("0. Exit\n\n");
+	printf("(0) Salir\n\n");
     }
 
 /*
