@@ -28,14 +28,19 @@ void appMain_displayMenu()
 		switch(option)
 		{
 			case '1':   // display submenu1
+				printf("Pedimos el nombre del archivo:\n");
+                getchar(); // aqui iría la funcion que captura el nombre del archivo y obtenemos el puntero a FILE
+				break;
+                
+            case '2':   // display submenu1
 				appMenu_subMenu1();
 				break;
 				
-			case '2':   // display submenu2
+			case '3':   // display submenu2
 				appMain_subMenu2();
 				break;
 				
-			case '3':   // display submenu3
+			case '4':   // display submenu3
 				appMain_subMenu3();
 				break;
 				
