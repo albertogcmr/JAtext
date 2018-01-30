@@ -23,7 +23,9 @@ void appMain_displayMenu()
 
 	option = appMenu_mainMenu();
 	
-	while (option != '0')
+	while (option != '0')   // cambiarlo por un do-while
+                            // do {...}
+                            //while(option != 0);
 	{
 		switch(option)
 		{
@@ -66,7 +68,7 @@ void appMain_subMenu1()
     
     option = appMenu_subMenu1();
     
-    switch(option)
+    switch(option) // hacer un do-while
 		{
 			
             case '0':   // Return to Main Menu
@@ -113,7 +115,7 @@ void appMain_subMenu2()
     
     option = appMenu_subMenu2();
     
-    switch(option)
+    switch(option) // hacer un do-while
 		{
 			
             case '0':   // Return to Main Menu
@@ -160,7 +162,7 @@ void appMain_subMenu3()
     
     option = appMenu_subMenu3();
     
-    switch(option)
+    switch(option) // hacer un do-while
 		{
 			
             case '0':   // Return to Main Menu
