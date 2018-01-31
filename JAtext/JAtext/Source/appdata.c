@@ -158,3 +158,92 @@ void helpers_copyFile(FILE * inFile, FILE * outFile)
 		c = fgetc(inFile);
 	}
 }
+
+
+int count_alphanum_in_string(char * s){
+	// FUNCIONA
+	// Cuenta el número de caracteres alfanuméricos en el string 
+	// hasta la llegada del fin de cadena '\0' 
+	int res = 0;
+	int i; 
+	for(i=0; s[i]!='\0'; i++){
+		if(isalnum(s[i])){
+			res++;
+		}
+	}
+	return res;	
+}
+
+int count_characters_in_string(char * s){
+	// FUNCIONA
+	// Cuenta el número de caracteres en el string hasta la llegada 
+	// del fin de cadena '\0'
+	int res = 0;
+	int i; 
+	for(i=0; s[i]!='\0'; i++){
+			res++;			
+	}
+	return res;	
+}	
+
+int count_num_words(char * s){
+	// FUNCIONA
+	// cuenta numero de palabras = caracteres alfanuméricos conexos
+	// "asdf asdf,asdf, asdf" -> 4
+	int res = 0;
+	int last_char_is_word = 0; // 0 si venimos de no carácter, 1 si venimos de un caracter alfanuméricos
+	int i;
+	for(i = 0; s[i]!= '\0'; i++){ // recorremos el string
+		if( isalnum(s[i]) && last_char_is_word == 0 ){ // venimos de no palabra y encontramos caracter alfanumérico
+			res++;
+			last_char_is_word = 1; // last_char_is_word -> 1
+		}
+		else if ( !isalnum(s[i]) ){ 
+			last_char_is_word = 0;
+		}
+	}
+	return res;
+}
+int negate_integer(int x){
+	// FUNCIONA
+	// operador negación 0->1, 1->0
+	int res;
+	if(x == 0) res = 1;
+	else res = 0;
+	return res;
+}
+/*
+int num_rep_word_in_string(char * word, char * s){
+	int res = 0;
+	//char * p_word = word;
+	//char * p_string = s;
+	
+	return res;
+}
+*/
+
+// función copiada de stackoverflow, podemos hacerla más bonita
+static char *replaceAll(char *buf, int buflen, const char *orig, const char *replace) {
+    if (!buf || !*buf || !orig || !*orig || !replace) return buf;
+
+    int olen = strlen(orig), rlen = strlen(replace);
+
+    int max = strlen(buf) + 1;
+    if (olen < rlen) {
+        max = rlen * ((max / olen) + 1) + 1;
+    }
+    char *tmpbuf = malloc(max);
+    char *bp = buf, *tp = tmpbuf, *sp;
+
+    while (NULL != (sp = strstr(bp, orig))) {
+        int f = sp - bp;
+        memmove(tp, bp, f);
+        memmove(tp + f, replace, rlen);
+        tp += f + rlen;
+        bp += f + olen;  // no recursive replacement
+    }
+    strcpy(tp, bp);
+    strncpy(buf, tmpbuf, buflen);
+    free(tmpbuf);
+    return buf;
+}

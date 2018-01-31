@@ -39,4 +39,17 @@ char * helpers_scanFromFile(FILE * inputFile, char delimiter, int maxValue);
 // Copies the content of a file into another file
 void helpers_copyFile(FILE * inFile, FILE * outFile);
 
+//Funciones sobre cadenas
+int count_alphanum_in_string(char * s);
+int count_characters_in_string(char * s);
+int count_num_words(char * s);
+int negate_integer(int x);
+
+/*
+int num_rep_word_in_string(char * word, char * s);
+*/
+
+// función copiada de stackoverflow, podemos hacerla más bonita
+static char *replaceAll(char *buf, int buflen, const char *orig, const char *replace);
+
 #endif
