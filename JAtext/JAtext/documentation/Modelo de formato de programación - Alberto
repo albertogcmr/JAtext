@@ -1,0 +1,21 @@
+# Ejmplo de función:
+# A mi me gusta poner los comentarios de la función dentro de ella, para que al 
+# copiar y pegar se vaya todo. 
+ 
+int maximo(int a, int b){
+/* 
+ * Function:    appMenu_mainMenu
+ * Description: Obtenemos el máximo entre dos enteros
+ * Arguments:   dos enteros
+ * Returns:     The option the user selected.
+ */
+
+	// Comentarios
+	int res = a; // Siempre que se pueda me gusta llamar al resultado res
+    
+	if (a<b){
+        res = b;
+    }  
+	return res; // Solo una sentencia de return para que la programación 
+                // sea estructurada
+}
