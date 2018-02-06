@@ -11,6 +11,7 @@
     <File Name="documentation/Gestor de archivos de texto en C.txt"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Includes">
+    <File Name="Includes/JAtext_operations.h"/>
     <File Name="Includes/JAtext_Main.h"/>
     <File Name="Includes/appdata.h"/>
     <File Name="Includes/JAtext_menu.h"/>
@@ -18,6 +19,7 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="Source">
+    <File Name="Source/JAtext_operations.c"/>
     <File Name="Source/appdata.c"/>
     <File Name="Source/JAtext_Main.c"/>
     <File Name="Source/JAtext_menu.c"/>
