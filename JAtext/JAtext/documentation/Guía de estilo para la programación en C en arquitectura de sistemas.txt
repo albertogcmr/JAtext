@@ -1,0 +1,297 @@
+# http://www.it.uc3m.es/pbasanta/asng/PRJ/Description/ASStyleGuide_es.html
+
+Guía de estilo para la programación en C en arquitectura de sistemas
+
+Un mismo programa en C se puede escribir de varias formas. Todas ellas pueden ser compiladas correctamente por el compilador y obtener un ejecutable, pero algunas de ellas son más fáciles de entender por las personas que otras. La “Guía de estilo” es el documento que explica cómo debe escribirse código C. Este estilo cambia de una institución a otra, pero en entornos industriales se suele exigir un escrupuloso respeto a estas reglas. A continuación te enumeramos las reglas que vamos a exigir en esta asignatura. Te vamos a exigir que tu código cumpla con estos requisitos, con lo que cuanto antes los leas y tengas en cuenta, menos trabajo te costará conseguir un código legible y fácil de mantener.
+
+Pero, ¿por qué es necesario observar estas normas cuando se escriben programas? Las razones se entienden mejor cuando se ponen en el contexto de proyectos software de calibre industrial. A continuación se muestran algunos ejemplos:
+
+---------------------------------------------------------------------------------------------------------------------
+Aplicación						Descripción										Líneas de código
+---------------------------------------------------------------------------------------------------------------------
+Sistema operativo Windows XP	Sistema operativo completo						40 millones
+Kernel de Linux					Núcleo de sistema operativo						8.4 millones
+Subversion						Sistema de control de versiones					417.000
+Google Chrome					Navegador web									1.5 millones (C++) y 1.4 millones (C)
+PHP								Motor de scripting para páginas web activas		800.000
+The Gimp						Edición gráfica									675.000
+VLC Media Player				Reproductor multimedia							341.000 (C), y 93.000 (C++)
+---------------------------------------------------------------------------------------------------------------------
+
+Cuando un programa está compuesto por varios cientos de miles de líneas, o incluso varios millones, es muy importante escribir el código tal que sea muy sencillo de leer. De lo contrario, se necesita una enorme cantidad de esfuerzo (quien dice esfuerzo dice dinero) para hacer cualquier modificación, por simple que parezca.
+
+También hay que entender que el código normalmente se escribe una vez, pero se lee decenas de veces: para buscar problemas, para entender cómo funciona antes de modificarlo, o para escribir otros módulos que interactúan con él. La norma no escrita que se sigue en la industria es que el código lo va a estar leyendo constantemente gente que no participó en su escritura.
+
+A continuación describimos las reglas a respetar. Están todas ellas numeradas para facilitar su identificación cuando tengas que revisar el estilo de tu código.
+
+A. Nombres de las variables
+===========================
+
+A.1. Los nombres de variables, funciones y ficheros deben ser cortos, descriptivos y concretos.
+
+--------------------------------------
+Bien
+--------------------------------------
+struct tcp_header header;
+bool is_enabled;
+
+int parse_xml_file(FILE * file);
+void init_user_interface(void);
+
+list.c
+xml_parser.c
+math.c
+--------------------------------------
+  
+  
+--------------------------------------  
+¡Mal!
+--------------------------------------
+struct tcp_header b;
+bool tmp;
+
+int open_xml_file_and_get_content(FILE * f);
+void ui(void);
+
+types.h
+utils.c
+code3.c
+--------------------------------------
+
+A.2. Los nombres de variables y funciones deben escribirse en minúsculas y, si se componen de varias palabras, cada palabra debe separarse mediante el símbolo “_” (guión bajo). Hay otras tendencias tales como usar mayúsculas para separar palabras (estilo que se conoce como “CamelCase”). En este curso adoptamos la separación por guiones bajos. Para mostrar por qué es preferible usar minúsculas con subrayado lee las dos frases siguientes:
+
+----------------------------------------------------------------
+YoTeniaUnTanganitoVerdeAlQueLeQuedabaGrandeLaCamiseta
+yo_tenia_un_tanganito_verde_al_que_le_quedaba_grande_la_camiseta
+----------------------------------------------------------------
+
+¿Cuál de las dos requiere menos concentración del lector? De todas formas, si la librería estándar del lenguaje que usas está escrita con estilo CamelCase (como es el caso de Java), debes usar este convenio por consistencia. Pero no es el caso del lenguaje C, con lo que adoptaremos la separación por guiones bajos.
+
+A.3. Las macros y constantes deben escribirse en mayúsculas para distinguirlas de variables y funciones.
+
+A.4. Las constantes y enumerados públicos deben llevar un prefijo corto de 3 o 4 letras que identifique al módulo que los define (un módulo es un conjunto de datos y funciones contenidos en varios ficheros). Esto evita conflicto de nombres entre distintos módulos. Por ejemplo:
+
+-------------------------------
+#define LST_MAX_SIZE 32
+enum
+{
+	MSG_CONNECT,
+	MSG_ACK,
+	MSG_DATA,
+	MSG_RELEASE
+} message_type_t;
+-------------------------------
+
+B. Formato del código
+=====================
+
+B.1. El código se debe indentar para representar la estructura lógica del programa. Deben usarse tabuladores para indentar, nunca espacios. La indentación que se adopta en el curso es de 4 espacios en blanco. Te recomendamos configurar el editor de código para que el tabulador introduzca el equivalente a 4 espacios.
+
+El motivo de usar tabuladores en lugar de espacios es que de esta forma, cada desarrollador puede visualizar el código con el nivel de indentación que más cómodo le resulte. Sólo hay que configurar el editor para representar el tabulador con el nivel de profundidad que se desee.
+
+B.2. Las llaves deben colocarse según el estándar Allman, también conocido como BSD, es decir, en la línea siguiente a un if, o a un while (ver ejemplos al final de la sección).
+
+B.3. Debe haber un espacio en blanco antes y después de los operadores de comparación, asignación, etc. También debe haber un espacio entre las palabras clave (for, while, if, return, etc.) y las expresiones que le siguen.
+
+B.4. El contenido de las funciones debe caber entero en pantalla. No debería ser necesario hacer scroll para ver el contenido completo, aunque en ocasiones puede ser necesario extenderse. En cualquier caso, nunca se deben escribir funciones que excedan el espacio de dos pantallas.
+
+B.5. Las líneas no deben tener una longitud mayor a 80 letras. Este convenio facilita la visualización de varios ficheros simultáneamente en la pantalla. A continuación mostramos dos fragmentos de código bien y mal formateado:
+
+-------------------------------------------------
+Bien
+-------------------------------------------------
+int db_sync(void)
+{
+	int i, retval = 0, result = 0;
+
+	for (i = 0; i < P_SIZE; i++)
+	{
+		if (param_info[i].dirty && param_info[i].sync_cb)
+		{
+			retval = param_info[i].sync_cb(i, param_db[i]);
+			result |= retval;
+
+			if (retval == 0)
+			param_info[i].dirty = false;
+		}
+		else
+		{
+			LOG_WARNING(“No callback for param %d”, i);
+		}
+	}
+
+	return result;
+}
+-------------------------------------------------
+
+
+-------------------------------------------------
+¡Mal!
+-------------------------------------------------
+int db_sync(void)
+{
+  int i, retval = 0, result = 0;
+
+  for (i = 0; i < P_SIZE; i++){
+  if (param_info[i].dirty && param_info[i].sync_cb) {
+    retval = param_info[i].sync_cb(i, param_db[i]);
+    result |= retval;
+    if (retval == 0)
+    param_info[i].dirty = false;
+  } else {
+  LOG_WARNING(“No callback for param %d”, i);
+  }
+  }
+  return result;}
+-------------------------------------------------
+
+
+C. Uso del pre-procesador
+=========================
+
+C.1. Deben usarse macros para definir tamaños de arrays de forma que sean fáciles de leer y modificar. Es frecuente usar las macros también para otro tipo de constantes en el código.
+
+----------------------------------
+#define TIMEOUT_SECS  120
+#define MAX_LINE_SIZE 80
+
+char input_line[MAX_LINE_SIZE];
+timer = set_timer(TIMEOUT_SECS);
+----------------------------------
+
+En el caso de arrays, el motivo es simple: en origen, C no permite usar variables para dimensionar un array. La única manera de usar constantes simbólicas con ellos es usar el preprocesador.
+
+D. Comentarios en el código
+===========================
+
+D.1. Todas las funciones definidas en un fichero “.c”, ya sean públicas o privadas (static) deben llevar un comentario encima que diga en una línea o dos qué es lo que hacen. También se pueden añadir en este encabezado comentarios sobre particularidades del funcionamiento general de la función.
+
+--------------------------------------------------------------------------
+/* 
+ * db_sync()
+ * Synchronizes the internal database with the firmware files by storing
+ * modified parameters on permanent storage.
+ *
+ * Any parameter marked as "dirty" will be dumped by calling its associated
+ * sync callback.
+ */
+int db_sync(void)
+{
+...
+}
+--------------------------------------------------------------------------
+
+Estos comentarios son para que una persona que esté explorando el código pueda entender qué hace una función sin tener que estudiarla en profundidad. Este breve comentario en el encabezado de la función debe apoyarse a su vez en un nombre de función descriptivo.
+
+D.2. Deben añadirse comentarios a partes no triviales del código. En muy raras ocasiones es necesario comentar líneas individuales, pues si el código está bien escrito, no es necesario repetir en un comentario lo que ya está escrito en C.
+
+-----------------------------------------------------
+Bien 	
+-----------------------------------------------------
+/* Call synchronization callback for parameters
+ * marked “dirty”. Clear dirty flag if callback
+ * succeeds. */
+if (param_info[i].dirty && param_info[i].sync_cb)
+{
+    retval = param_info[i].sync_cb(i, param_db[i]);
+    result |= retval;
+
+    if (retval == 0)
+    {
+        param_info[i].dirty = false;
+    }
+}
+-----------------------------------------------------
+
+-----------------------------------------------------
+¡Mal!
+-----------------------------------------------------
+if (param_info[i].dirty && param_info[i].sync_cb)
+{
+  /* Call sync_cb */
+  retval = param_info[i].sync_cb(i, param_db[i]);
+  result |= retval;
+
+  if (retval == 0)
+  {
+    /* Set dirty flag to false ª/
+    param_info[i].dirty = false;
+  }
+}
+-----------------------------------------------------
+
+E. Organización del código
+==========================
+E.1. El código en C se organiza en ficheros con extensiones “.c” y “.h”. Para cada fichero “.c” debe existir un “.h” con el mismo nombre (list.c, list.h). A esta pareja de ficheros se la denomina informalmente módulo. Los ficheros “.c” no son únicamente un conjunto de funciones. La clave para organizar el código en varios ficheros y no tener problemas de dependencias cruzadas (el compilador protesta porque desconoce un símbolo o definición que está en otro fichero), es entender que lo que en otros lenguajes de programación se maneja de manera natural como objetos, en C suelen ser los módulos (aunque muchísimo más simplificado, claro).
+
+E.2. Cada módulo (u “objeto” si se quiere) tiene un conjunto de funciones cuyos prototipos conforman la interfaz pública que está definida en el fichero “.h”. El fichero “.c” contiene la implementación de estas funciones y en algunos casos variables y funciones que sólo son accesible dentro del “.c”. Los prototipos de las funciones que se consideran públicas (se pueden utilizar desde cualquier otro sitio del programa) se ponen en el “.h” para que otros módulos puedan usarlas utilizando al comienzo de su fichero la directiva #include. Las otras funciones, las privadas, se incluyen sólo dentro del “.c” definidas con el prefijo static y así no pueden ser invocadas desde otro fichero.
+
+E.3. Cada fichero “.c” debe tener al comienzo una directiva include para incluir a su propio “.h” (por ejemplo, list.c debe tener #include "list.h"). Esto se hace para evitar inconsistencias entre la definición de variables o prototipos de las funciones públicas en el “.c”, y la declaración de su prototipo en el “.h”. Si se incluye el “.h” en su correspondiente “.c”, el compilador puede detectar conflictos de tipo.
+
+E.4. Los ficheros “.h” deben contener sólo declaraciones públicas: tipos, constantes, variables globales y prototipos de funciones diseñados para ser usados desde fuera del módulo. Todo lo demás se debe incluir en el “.c”
+
+E.5. Todo fichero “.h” debe contener una guarda para evitar inclusiones múltiples. Una guarda se implementa rodeando el contenido del fichero entero entre #ifndef SÍMBOLO y #endif. El nombre del símbolo debe ser único para ese fichero (se recomienda utilizar el propio nombre del fichero con guiones bajos). A continuación de la primera línea que tiene el #ifndef debe ir la directiva #define seguida del mismo símbolo idéntico que se ha incluido en la línea anterior. Tras esta directiva se incluye el contenido del fichero “.h” con normalidad. A continuación se muestra un ejemplo de guarda implementada en el fichero con nombre list.h.
+
+-------------------------------------
+#ifndef _LIST_H
+#define _LIST_H_
+...
+... contenido del fichero list.h ...
+...
+#endif /* _LIST_H_ */
+-------------------------------------
+
+E.6. Los ficheros “.h” sólo deben contener las directivas #include imprescindibles para compilar por sí mismos. La mejor forma para probar que un “.h” incluye sólo lo imprescindible es escribir un pequeño main como el que se muestra a continuación:
+
+-------------------------------------
+#include "list.h"
+int main(void)
+{
+    return 0;
+}
+-------------------------------------
+
+E.7. Es obligatorio definir como static las variables y funciones privadas (que no pueden usarse en ningún otro sitio). Las variables globales de un módulo, deben definirse juntas al comienzo del fichero para poder identificarlas de un vistazo. En ningún caso deben estar desperdigadas por el medio del fichero. Una consecuencia de esta regla es que conviene separar la definición de estructuras de la declaración de variables globales de tipo struct. Por un lado se definen los tipos (si son públicos en el “.h”, si no lo son en el “.c”), y por otro se declaran las variables globales del módulo haciendo uso de esos tipos.
+-------------------------------------
+Bien 	
+-------------------------------------
+#include "param_db.h"
+
+struct param_entry
+{
+    char param[PARAM_MAX_LEN];
+    char value[VALUE_MAX_LEN];
+    char default[VALUE_MAX_LEN];
+};
+
+struct param_list
+{
+    struct param_entry param;
+    struct list_node *next;
+};
+
+/* Global Variables */
+int error_code;
+static struct param_list *param_map;
+-------------------------------------
+	
+-------------------------------------	
+¡Mal!
+-------------------------------------
+#include "param_db.h"
+
+struct param_entry
+{
+    char param[PARAM_MAX_LEN];
+    char value[VALUE_MAX_LEN];
+    char default[VALUE_MAX_LEN];
+};
+
+static struct param_list
+{
+    struct param_entry param;
+    struct list_node *next;
+} *param_map;
+
+int error_code;
+-------------------------------------

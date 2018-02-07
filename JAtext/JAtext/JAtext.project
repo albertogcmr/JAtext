@@ -6,6 +6,7 @@
     </Plugin>
   </Plugins>
   <VirtualDirectory Name="documentation">
+    <File Name="documentation/Guía de estilo para la programación en C en arquitectura de sistemas.txt"/>
     <File Name="documentation/sugerencias de gitignore.txt"/>
     <File Name="documentation/MenuDescription.txt"/>
     <File Name="documentation/Gestor de archivos de texto en C.txt"/>

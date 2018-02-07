@@ -98,13 +98,6 @@ Menú principal:
 (0) Salir del programa
 
 
-(1.2) Guardar archivo: -> salva archivo cargado previamente con su mismo nombre y Volvemos al mismo submenú
-
-(1.3) Renombrar archivo: -> solicita al usuario un nuevo nombre y salva archivo con ese nuevo nombre eliminando el documento previo. y Volvemos al mismo submenú
-
-(1.4) Copiar archivo: -> solicita nuevo nombre y salva archivo con ese nuevo nombre manteniendo el documento previo. y Volvemos al mismo submenú
-
-(1.0) Salir: -> Vuelve al menú principal
 
 
 (2.1) Número de caracteres/Palabras/Lineas: -> muestra número de caracteres alfanuméricos , palabras y líneas. el usuario pulsa ENTER para confirmar que ha leido el mensaje. Volvemos al mismo submenú
@@ -139,3 +132,12 @@ pe:
 (3.5) Eliminar linea: -> solicita índice de linea a eliminar. el usuario pulsa ENTER para confirmar que ha leido el mensaje de "linea eliminada" o "linea no existe". Volvemos al mismo submenú 
 
 (3.0) Salir: -> Vuelve al menú principal 
+
+
+(4.1) Guardar archivo: -> salva archivo cargado previamente con su mismo nombre y Volvemos al mismo submenú
+
+(4.2) Renombrar archivo: -> solicita al usuario un nuevo nombre y salva archivo con ese nuevo nombre eliminando el documento previo. y Volvemos al mismo submenú
+
+(4.3) Copiar archivo: -> solicita nuevo nombre y salva archivo con ese nuevo nombre manteniendo el documento previo. y Volvemos al mismo submenú
+
+(4.0) Salir: -> Vuelve al menú principal

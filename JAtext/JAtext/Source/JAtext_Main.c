@@ -9,6 +9,7 @@
 
 #include "JAtext_Main.h"
 #include "JAtext_menu.h"
+#include "JAtext_operations.h"
 
 
 /* 
@@ -30,8 +31,7 @@ void appMain_displayMenu()
 		switch(option)
 		{
 			case '1':   // display submenu1
-				printf("Pedimos el nombre del archivo:\n");
-                getchar(); // aqui iría la funcion que captura el nombre del archivo y obtenemos el puntero a FILE
+				option_load_file();
 				break;
                 
             case '2':   // display submenu1
@@ -76,19 +76,15 @@ void appMain_subMenu1()
 				break;
                 
             case '1':   // Select option 1
-				
+				option_num_char_words_lines();
 				break;
 				
 			case '2':   // Select option 2
-				
+				option_num_vow_consonants();
 				break;
 				
 			case '3':   // Select option 3
-				
-				break;
-			
-            case '4':   // Select option 4
-				
+				option_num_rep_word();
 				break;
                 
 			default:
@@ -123,21 +119,24 @@ void appMain_subMenu2()
 				break;
                 
             case '1':   // Select option 1
-				
+				option_show_text_file();
 				break;
 				
 			case '2':   // Select option 2
-				
+				option_sust_word();
 				break;
 				
 			case '3':   // Select option 3
-				
+				option_add_line_end_file();
 				break;
 			
             case '4':   // Select option 4
-				
+				option_insert_line_index_file();
 				break;
-                
+            
+            case '5':   // Select option 4
+				option_del_line();
+				break;                
 			default:
 				break;
 		}
@@ -170,21 +169,17 @@ void appMain_subMenu3()
 				break;
                 
             case '1':   // Select option 1
-				
+				option_save_file();
 				break;
 				
 			case '2':   // Select option 2
-				
+				option_renown_file();
 				break;
 				
 			case '3':   // Select option 3
-				
+				option_copy_file();
 				break;
 			
-            case '4':   // Select option 4
-				
-				break;
-                
 			default:
 				break;
 		}
