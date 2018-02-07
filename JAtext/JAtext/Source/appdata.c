@@ -20,7 +20,8 @@
 void helpers_clearScreen()
 {
 	// Windows users: please, use system("cls");
-	system("cls");
+	
+    //system("cls");
 	
 	// Linux users: please, comment previous line and use system("clear");
 	// system("clear");

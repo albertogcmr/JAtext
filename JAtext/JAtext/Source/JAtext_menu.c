@@ -145,6 +145,3 @@ void appPrint_subMenu3(){
 	printf("\n Select an option. (0 to exit)\n");
     }
 
-void a_menu(){
-    printf("\nMenu: \n");
-}

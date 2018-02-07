@@ -18,7 +18,4 @@ void appPrint_subMenu2();
 char appMenu_subMenu3(); 
 void appPrint_subMenu3();
 
-// Despliega menú
-void a_menu();
-
 #endif

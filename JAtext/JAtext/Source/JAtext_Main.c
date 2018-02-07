@@ -21,9 +21,7 @@
 void appMain_displayMenu()
 {
 	char option;
-
-	option = appMenu_mainMenu();
-	
+	option = appMenu_mainMenu();	
 	while (option != '0')   // cambiarlo por un do-while
                             // do {...}
                             //while(option != 0);
@@ -61,16 +59,12 @@ void appMain_displayMenu()
  * Returns:     ---
  */
 void appMain_subMenu1()
-{
-	
-    char option;
-    
-    
+{	
+    char option;    
     option = appMenu_subMenu1();
     
     switch(option) // hacer un do-while
-		{
-			
+		{			
             case '0':   // Return to Main Menu
 				appMain_displayMenu();
 				break;
@@ -92,7 +86,6 @@ void appMain_subMenu1()
 		}
        
        option = appMenu_subMenu1();
-
 }
 
 
@@ -104,11 +97,8 @@ void appMain_subMenu1()
  * Returns:     ---
  */
 void appMain_subMenu2()
-{
-	
-    char option;
-    
-    
+{	
+    char option;    
     option = appMenu_subMenu2();
     
     switch(option) // hacer un do-while
@@ -136,13 +126,13 @@ void appMain_subMenu2()
             
             case '5':   // Select option 4
 				option_del_line();
-				break;                
+				break; 
+               
 			default:
 				break;
 		}
        
        option = appMenu_subMenu2();
-
 }
 
 
@@ -154,16 +144,12 @@ void appMain_subMenu2()
  * Returns:     ---
  */
 void appMain_subMenu3()
-{
-	
-    char option;
-    
-    
+{	
+    char option; 
     option = appMenu_subMenu3();
     
     switch(option) // hacer un do-while
-		{
-			
+		{			
             case '0':   // Return to Main Menu
 				appMain_displayMenu();
 				break;
@@ -182,8 +168,6 @@ void appMain_subMenu3()
 			
 			default:
 				break;
-		}
-       
+		}       
        option = appMenu_subMenu3();
-
 }
