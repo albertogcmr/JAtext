@@ -36,10 +36,9 @@ void helpers_clearScreen()
 char helpers_getOption()
 {
 	char retValue;
-
 	retValue = getchar();
+    printf("Option = %c", retValue);
 	fflush(stdin);
-
 	return retValue;
 }
 
@@ -53,7 +52,6 @@ char helpers_getOption()
 void helpers_pressAnyKey()
 {
 	printf("\nPress any key to continue.\n");
-
 	getchar();
 	fflush(stdin);
 }

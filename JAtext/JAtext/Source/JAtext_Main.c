@@ -21,19 +21,20 @@
 void appMain_displayMenu()
 {
 	char option;
-	option = appMenu_mainMenu();	
-	while (option != '0')   // cambiarlo por un do-while
-                            // do {...}
-                            //while(option != 0);
-	{
-		switch(option)
+    
+    do
+    {
+        appPrint_mainMenu();
+        option = helpers_getOption();
+        switch(option)
 		{
-			case '1':   // display submenu1
+			case '1':   // display carga archivo
 				option_load_file();
 				break;
                 
             case '2':   // display submenu1
-				appMenu_subMenu1();
+				//appMenu_subMenu1();
+                appMain_subMenu1();
 				break;
 				
 			case '3':   // display submenu2
@@ -47,8 +48,7 @@ void appMain_displayMenu()
 			default:
 				break;
 		}
-		option = appMenu_mainMenu();
-	}
+    } while(option != '0');
 }
 
 
@@ -61,13 +61,15 @@ void appMain_displayMenu()
 void appMain_subMenu1()
 {	
     char option;    
-    option = appMenu_subMenu1();
-    
-    switch(option) // hacer un do-while
+    do
+    {
+        appPrint_subMenu1();
+        option = helpers_getOption();
+        switch(option) // hacer un do-while
 		{			
-            case '0':   // Return to Main Menu
+            /*case '0':   // Return to Main Menu
 				appMain_displayMenu();
-				break;
+				break;*/
                 
             case '1':   // Select option 1
 				option_num_char_words_lines();
@@ -82,10 +84,11 @@ void appMain_subMenu1()
 				break;
                 
 			default:
+                option_exit_submenu();
 				break;
-		}
-       
-       option = appMenu_subMenu1();
+		} 
+    
+    } while(option != '0');
 }
 
 
@@ -99,9 +102,11 @@ void appMain_subMenu1()
 void appMain_subMenu2()
 {	
     char option;    
-    option = appMenu_subMenu2();
-    
-    switch(option) // hacer un do-while
+    do
+    {    
+        appPrint_subMenu2();
+        option = helpers_getOption();
+        switch(option) // hacer un do-while
 		{
 			
             case '0':   // Return to Main Menu
@@ -129,10 +134,11 @@ void appMain_subMenu2()
 				break; 
                
 			default:
+                option_exit_submenu();
 				break;
 		}
-       
-       option = appMenu_subMenu2();
+        
+    } while(option != '0');
 }
 
 
@@ -146,9 +152,12 @@ void appMain_subMenu2()
 void appMain_subMenu3()
 {	
     char option; 
-    option = appMenu_subMenu3();
     
-    switch(option) // hacer un do-while
+    do
+    {
+        appPrint_subMenu3();
+        option = helpers_getOption();
+        switch(option) // hacer un do-while
 		{			
             case '0':   // Return to Main Menu
 				appMain_displayMenu();
@@ -167,7 +176,12 @@ void appMain_subMenu3()
 				break;
 			
 			default:
+                option_exit_submenu();
 				break;
-		}       
-       option = appMenu_subMenu3();
+		}  
+
+    } while(option != '0');
+
+    
+         
 }

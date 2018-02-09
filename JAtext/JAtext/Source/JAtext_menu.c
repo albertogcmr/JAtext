@@ -54,14 +54,14 @@ void appPrint_mainMenu(){
  */
  
  
-char appMenu_subMenu1()
+/*char appMenu_subMenu1()
 {
 	char option;
     appPrint_subMenu1();		
 	option = helpers_getOption();
 	
 	return option;
-}
+}*/
 
 void appPrint_subMenu1(){
     helpers_clearScreen();
@@ -86,7 +86,7 @@ void appPrint_subMenu1(){
  */
  
  
-char appMenu_subMenu2()
+/*char appMenu_subMenu2()
 {
 	char option;
     appPrint_subMenu2();	
@@ -94,7 +94,8 @@ char appMenu_subMenu2()
 	option = helpers_getOption();
 	
 	return option;
-}
+}*/
+
 void appPrint_subMenu2(){
     helpers_clearScreen();
 	
@@ -120,7 +121,7 @@ void appPrint_subMenu2(){
  */
  
  
-char appMenu_subMenu3()
+/*char appMenu_subMenu3()
 {
 	char option;
 	
@@ -129,7 +130,7 @@ char appMenu_subMenu3()
 	option = helpers_getOption();
 	
 	return option;
-}
+}*/
 
 void appPrint_subMenu3(){
     helpers_clearScreen();
