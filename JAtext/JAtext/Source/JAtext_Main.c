@@ -67,9 +67,9 @@ void appMain_subMenu1()
         option = helpers_getOption();
         switch(option) // hacer un do-while
 		{			
-            /*case '0':   // Return to Main Menu
-				appMain_displayMenu();
-				break;*/
+            case '0':   // Return to Main Menu
+				option_exit_submenu();
+				break;
                 
             case '1':   // Select option 1
 				option_num_char_words_lines();
@@ -83,8 +83,7 @@ void appMain_subMenu1()
 				option_num_rep_word();
 				break;
                 
-			default:
-                option_exit_submenu();
+			default:                
 				break;
 		} 
     
@@ -110,7 +109,7 @@ void appMain_subMenu2()
 		{
 			
             case '0':   // Return to Main Menu
-				appMain_displayMenu();
+				option_exit_submenu();
 				break;
                 
             case '1':   // Select option 1
@@ -134,7 +133,6 @@ void appMain_subMenu2()
 				break; 
                
 			default:
-                option_exit_submenu();
 				break;
 		}
         
@@ -160,7 +158,7 @@ void appMain_subMenu3()
         switch(option) // hacer un do-while
 		{			
             case '0':   // Return to Main Menu
-				appMain_displayMenu();
+				option_exit_submenu();
 				break;
                 
             case '1':   // Select option 1
@@ -176,7 +174,6 @@ void appMain_subMenu3()
 				break;
 			
 			default:
-                option_exit_submenu();
 				break;
 		}  
 
