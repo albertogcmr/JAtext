@@ -12,6 +12,8 @@
 #include "JAtext_operations.h"
 
 
+
+
 /* 
  * Function:    appMain_displayMenu
  * Description: Displays the JAtext App main menu
@@ -21,6 +23,7 @@
 void appMain_displayMenu()
 {
 	char option;
+    FILE * fp;
     
     do
     {
@@ -29,7 +32,8 @@ void appMain_displayMenu()
         switch(option)
 		{
 			case '1':   // display carga archivo
-				option_load_file();
+				fp = option_load_file(fp);     // FUNCIONA OK, fp es el puntero al archivo
+      
 				break;
                 
             case '2':   // display submenu1

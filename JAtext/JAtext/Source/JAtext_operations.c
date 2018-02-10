@@ -10,10 +10,30 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX_LINE_TAM 254
+#define MAX_FILENAME_TAM 64
 
-void option_load_file()
+
+FILE * option_load_file(FILE * fp)
 {
-    printf("\nEstamos en la opción:(1) Cargar archivo\n");
+    char filename [MAX_FILENAME_TAM];    
+    char buff[MAX_LINE_TAM];  
+    
+    printf("\nEscribe nombre de archivo origen: ");
+    scanf("%s", filename);
+    printf("\nNombre elegido: %s", filename);
+    
+    fp = fopen(filename, "r");
+    if ( fp == NULL ) 
+    {
+        printf("\nError en archivo");
+    }
+    
+    //prueba
+    fgets(buff, MAX_LINE_TAM, (FILE*)fp);
+    printf("\n[1] : %s", buff);
+    
+    return fp;
 }
 
 void option_num_char_words_lines()
