@@ -23,7 +23,7 @@
 void appMain_displayMenu()
 {
 	char option;
-    FILE * fp;
+    FILE * fp = NULL;
     
     do
     {
@@ -32,8 +32,7 @@ void appMain_displayMenu()
         switch(option)
 		{
 			case '1':   // display carga archivo
-				fp = option_load_file(fp);     // FUNCIONA OK, fp es el puntero al archivo
-      
+				fp = option_load_file(fp);     // FUNCIONA OK, fp es el puntero al archivo      
 				break;
                 
             case '2':   // display submenu1
