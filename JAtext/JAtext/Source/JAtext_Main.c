@@ -34,15 +34,15 @@ void appMain_displayMenu()
                 
             case '2':   // display submenu1
 				//appMenu_subMenu1();
-                appMain_subMenu1();
+                appMain_displaysubMenu_metadatos();
 				break;
 				
 			case '3':   // display submenu2
-				appMain_subMenu2();
+				appMain_displaysubMenu_edicion();
 				break;
 				
 			case '4':   // display submenu3
-				appMain_subMenu3();
+				appMain_displaysubMenu_archivos();
 				break;
 				
 			default:
@@ -53,17 +53,17 @@ void appMain_displayMenu()
 
 
 /* 
- * Function:    appMain_subMenu1
+ * Function:    appMain_displaysubMenu_metadatos
  * Description: Displays the available options for sub-menu1
  * Arguments:   ---
  * Returns:     ---
  */
-void appMain_subMenu1()
+void appMain_displaysubMenu_metadatos()
 {	
     char option;    
     do
     {
-        appPrint_subMenu1();
+        appPrint_subMenu_metadatos();
         option = helpers_getOption();
         switch(option) // hacer un do-while
 		{			
@@ -98,12 +98,12 @@ void appMain_subMenu1()
  * Arguments:   ---
  * Returns:     ---
  */
-void appMain_subMenu2()
+void appMain_displaysubMenu_edicion()
 {	
     char option;    
     do
     {    
-        appPrint_subMenu2();
+        appPrint_subMenu_edicion();
         option = helpers_getOption();
         switch(option) // hacer un do-while
 		{
@@ -147,13 +147,13 @@ void appMain_subMenu2()
  * Arguments:   ---
  * Returns:     ---
  */
-void appMain_subMenu3()
+void appMain_displaysubMenu_archivos()
 {	
     char option; 
     
     do
     {
-        appPrint_subMenu3();
+        appPrint_subMenu_archivos();
         option = helpers_getOption();
         switch(option) // hacer un do-while
 		{			

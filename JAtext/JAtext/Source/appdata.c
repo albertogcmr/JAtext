@@ -19,8 +19,7 @@
  */
 void helpers_clearScreen()
 {
-	// Windows users: please, use system("cls");
-	
+	// Windows users: please, use system("cls");	
     //system("cls");
 	
 	// Linux users: please, comment previous line and use system("clear");
@@ -37,7 +36,7 @@ char helpers_getOption()
 {
 	char retValue;
 	retValue = getchar();
-    printf("Option = %c", retValue);
+    //printf("Option = %c", retValue);
 	fflush(stdin);
 	return retValue;
 }
@@ -222,7 +221,7 @@ int num_rep_word_in_string(char * word, char * s){
 */
 
 // función copiada de stackoverflow, podemos hacerla más bonita
-static char *replaceAll(char *buf, int buflen, const char *orig, const char *replace) {
+static char * replaceAll(char *buf, int buflen, const char *orig, const char *replace) {
     if (!buf || !*buf || !orig || !*orig || !replace) return buf;
 
     int olen = strlen(orig), rlen = strlen(replace);

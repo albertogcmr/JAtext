@@ -5,12 +5,12 @@
 void appMain_displayMenu();
 
 // Displays the Cars Management sub-menu1
-void appMain_subMenu1();
+void appMain_displaysubMenu_metadatos();
 
 // Displays the Cars Management sub-menu2
-void appMain_subMenu2();
+void appMain_displaysubMenu_edicion();
 
 // Displays the Cars Management sub-menu3
-void appMain_subMenu3();
+void appMain_displaysubMenu_archivos();
 
 #endif

@@ -63,7 +63,7 @@ void appPrint_mainMenu(){
 	return option;
 }*/
 
-void appPrint_subMenu1(){
+void appPrint_subMenu_metadatos(){
     helpers_clearScreen();
 	
 	printf("\nSub-Menu 1: Datos y metadatos del archivo:\n");
@@ -96,7 +96,7 @@ void appPrint_subMenu1(){
 	return option;
 }*/
 
-void appPrint_subMenu2(){
+void appPrint_subMenu_edicion(){
     helpers_clearScreen();
 	
 	printf("\nSub-Menu 2: Edición del archivo de texto:\n");
@@ -132,7 +132,7 @@ void appPrint_subMenu2(){
 	return option;
 }*/
 
-void appPrint_subMenu3(){
+void appPrint_subMenu_archivos(){
     helpers_clearScreen();
 	
 	printf("\nSub-Menu 3: Operaciones sobre archivos:\n");
