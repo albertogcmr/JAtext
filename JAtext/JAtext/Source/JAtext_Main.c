@@ -79,11 +79,11 @@ void appMain_displaysubMenu_metadatos(FILE * fp)
 				break;
 				
 			case '2':   // Select option 2
-				option_num_vow_consonants();
+				option_num_vow_consonants(fp);
 				break;
 				
 			case '3':   // Select option 3
-				option_num_rep_word();
+				option_num_rep_word(fp);
 				break;
                 
 			default:                
@@ -120,19 +120,19 @@ void appMain_displaysubMenu_edicion(FILE * fp)
 				break;
 				
 			case '2':   // Select option 2
-				option_sust_word();
+				option_sust_word(fp);
 				break;
 				
 			case '3':   // Select option 3
-				option_add_line_end_file();
+				option_add_line_end_file(fp);
 				break;
 			
             case '4':   // Select option 4
-				option_insert_line_index_file();
+				option_insert_line_index_file(fp);
 				break;
             
             case '5':   // Select option 4
-				option_del_line();
+				option_del_line(fp);
 				break; 
                
 			default:
@@ -165,15 +165,15 @@ void appMain_displaysubMenu_archivos(FILE * fp)
 				break;
                 
             case '1':   // Select option 1
-				option_save_file();
+				option_save_file(fp);
 				break;
 				
 			case '2':   // Select option 2
-				option_renown_file();
+				option_renown_file(fp);
 				break;
 				
 			case '3':   // Select option 3
-				option_copy_file();
+				option_copy_file(fp);
 				break;
 			
 			default:

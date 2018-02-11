@@ -61,12 +61,12 @@ void option_num_char_words_lines(FILE * fp)
 
 }
 
-void option_num_vow_consonants()
+void option_num_vow_consonants(FILE * fp)
 {
     printf("\nEstamos en la opción:(2.2) Número de vocales/Consonantes\n");
 
 }
-void option_num_rep_word()
+void option_num_rep_word(FILE * fp)
 {
     printf("\nEstamos en la opción:(2.3) Número apariciones de una palabra\n");
 
@@ -88,38 +88,38 @@ void option_show_text_file(FILE * fp)
     rewind(fp); // reinicia el puntero al principio del archivo
 }
 
-void option_sust_word()
+void option_sust_word(FILE * fp)
 {
     printf("\nEstamos en la opción: (3.2) Sustituir palabra\n");
 
 }
-void option_add_line_end_file()
+void option_add_line_end_file(FILE * fp)
 {
     printf("\nEstamos en la opción: (3.3) Añadir linea al final del documento\n");
 
 }
-void option_insert_line_index_file()
+void option_insert_line_index_file(FILE * fp)
 {
     printf("\nEstamos en la opción: (3.4) Insertar linea en posición X\n");
 
 }
-void option_del_line()
+void option_del_line(FILE * fp)
 {
     printf("\nEstamos en la opción: (3.5) Eliminar linea\n");
 
 }
 
-void option_save_file()
+void option_save_file(FILE * fp)
 {
     printf("\nEstamos en la opción: (4.1) Guardar archivo\n");
 
 }
-void option_renown_file()
+void option_renown_file(FILE * fp)
 {
     printf("\nEstamos en la opción: (4.2) Renombrar archivo\n");
 
 }
-void option_copy_file()
+void option_copy_file(FILE * fp)
 {
     printf("\nEstamos en la opción: (4.3) Copiar archivo\n");
 
