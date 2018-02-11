@@ -1,11 +1,6 @@
-asdfas fas fd
-asfasdf
-asdf asdfa
-asdfa sdfa sfd
-asdfas fas fd
-asfasdf
-asdf asdfa
-asdfa sdfa sfd
-asdfas fas fd
-
-
+linea 1 asddfgsdfgas fas fd
+linea 2 awerweas fas fd
+linea 3 asdfas fas fd
+linea 4  asdsdg fas fd
+linea 5 asdfas fas fd
+linea 6 asd   s fas fd

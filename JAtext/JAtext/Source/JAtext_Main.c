@@ -37,15 +37,15 @@ void appMain_displayMenu()
                 
             case '2':   // display submenu1
 				//appMenu_subMenu1();
-                appMain_displaysubMenu_metadatos();
+                appMain_displaysubMenu_metadatos(fp);
 				break;
 				
 			case '3':   // display submenu2
-				appMain_displaysubMenu_edicion();
+				appMain_displaysubMenu_edicion(fp);
 				break;
 				
 			case '4':   // display submenu3
-				appMain_displaysubMenu_archivos();
+				appMain_displaysubMenu_archivos(fp);
 				break;
 				
 			default:
@@ -61,7 +61,7 @@ void appMain_displayMenu()
  * Arguments:   ---
  * Returns:     ---
  */
-void appMain_displaysubMenu_metadatos()
+void appMain_displaysubMenu_metadatos(FILE * fp)
 {	
     char option;    
     do
@@ -101,7 +101,7 @@ void appMain_displaysubMenu_metadatos()
  * Arguments:   ---
  * Returns:     ---
  */
-void appMain_displaysubMenu_edicion()
+void appMain_displaysubMenu_edicion(FILE * fp)
 {	
     char option;    
     do
@@ -116,7 +116,7 @@ void appMain_displaysubMenu_edicion()
 				break;
                 
             case '1':   // Select option 1
-				option_show_text_file();
+				option_show_text_file(fp);
 				break;
 				
 			case '2':   // Select option 2
@@ -150,7 +150,7 @@ void appMain_displaysubMenu_edicion()
  * Arguments:   ---
  * Returns:     ---
  */
-void appMain_displaysubMenu_archivos()
+void appMain_displaysubMenu_archivos(FILE * fp)
 {	
     char option; 
     
