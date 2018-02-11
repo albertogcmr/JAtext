@@ -1,4 +1,4 @@
 # JAtext
-Colaborative C project
+Colaborative C project: Text editor
 
 garcia.cobo.alberto@gmail.com
