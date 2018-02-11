@@ -75,7 +75,7 @@ void appMain_displaysubMenu_metadatos(FILE * fp)
 				break;
                 
             case '1':   // Select option 1
-				option_num_char_words_lines();
+				option_num_char_words_lines(fp);
 				break;
 				
 			case '2':   // Select option 2

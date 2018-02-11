@@ -172,6 +172,7 @@ int count_alphanum_in_string(char * s){
 	return res;	
 }
 
+// es como strlen, no hará falta
 int count_characters_in_string(char * s){
 	// FUNCIONA
 	// Cuenta el número de caracteres en el string hasta la llegada 

@@ -36,11 +36,31 @@ FILE * option_load_file(FILE * fp)
     return fp;
 }
 
-void option_num_char_words_lines()
+void option_num_char_words_lines(FILE * fp)
 {
+    char buff[MAX_LINE_TAM]; 
+    int num_char = 0;
+    int num_words = 0;
+    int num_lines = 0;
+    
     printf("\nEstamos en la opción:(2.1) Número de caracteres/Palabras/Lineas\n");
+    
+    while(fgets(buff, MAX_LINE_TAM, (FILE*)fp)) // recorre el archivo fila a fila mientras no encuentre EOF
+    {
+        //printf("\n[%d] : %s", indice, buff);
+        num_char += strlen(buff);
+        num_words += count_num_words(buff);
+        num_lines++;
+    }
+    
+    rewind(fp); // reinicia el puntero al principio del archivo
+    printf("\nNúmero de Caracteres/Palabras/Lineas\n");
+    printf("\nCaracteres = %d", num_char);
+    printf("\nPalabras = %d", num_words);
+    printf("\nLineas = %d", num_lines);
 
 }
+
 void option_num_vow_consonants()
 {
     printf("\nEstamos en la opción:(2.2) Número de vocales/Consonantes\n");

@@ -4,7 +4,7 @@
 //una función por cada operación, primero van a imprimir por pantalla, luego le metemos contenido
 FILE * option_load_file(FILE * fp);
 
-void option_num_char_words_lines();
+void option_num_char_words_lines(FILE * fp);
 void option_num_vow_consonants();
 void option_num_rep_word();
 
