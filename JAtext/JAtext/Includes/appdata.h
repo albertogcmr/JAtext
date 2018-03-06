@@ -44,7 +44,8 @@ int count_alphanum_in_string(char * s);
 int count_characters_in_string(char * s);
 int count_num_words(char * s);
 int negate_integer(int x);
-
+int count_vowls_in_string(char * s);
+int count_consonants_in_string(char * s);
 /*
 int num_rep_word_in_string(char * word, char * s);
 */

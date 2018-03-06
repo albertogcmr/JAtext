@@ -63,7 +63,22 @@ void option_num_char_words_lines(FILE * fp)
 
 void option_num_vow_consonants(FILE * fp)
 {
+    char buff[MAX_LINE_TAM]; 
+    int num_vocales = 0;
+    int num_consonantes = 0;
     printf("\nEstamos en la opción:(2.2) Número de vocales/Consonantes\n");
+    
+    while(fgets(buff, MAX_LINE_TAM, (FILE*)fp)) // recorre el archivo fila a fila mientras no encuentre EOF
+    {
+        //printf("\n[%d] : %s", indice, buff);
+        num_vocales += count_vowls_in_string(buff);
+        num_consonantes += count_consonants_in_string(buff);
+    }
+    
+    rewind(fp); // reinicia el puntero al principio del archivo
+    printf("\nNúmero de vocales/Consonantes\n");
+    printf("\nVocales = %d", num_vocales);
+    printf("\nConsonantes = %d", num_consonantes);
 
 }
 void option_num_rep_word(FILE * fp)

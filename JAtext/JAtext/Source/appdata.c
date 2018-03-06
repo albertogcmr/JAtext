@@ -11,6 +11,9 @@
 
 #include "appdata.h"
 
+#define VOCALES "aeiouAEIOU"
+#define CONSONANTES "bcdfghjklmnñpqrstvwxyzBCDFGHJKLMNÑPQRSTVWXYZ"
+
 /*
  * Function:    helpers_clearScreen
  * Description: Used to clear the output screen
@@ -245,4 +248,37 @@ static char * replaceAll(char *buf, int buflen, const char *orig, const char *re
     strncpy(buf, tmpbuf, buflen);
     free(tmpbuf);
     return buf;
+}
+
+int count_vowls_in_string(char * s)
+{
+	// FUNCIONA
+	// Cuenta el número de vocales alfanuméricos en el string 
+	// hasta la llegada del fin de cadena '\0' 
+	int res = 0;
+	int i; 
+	for(i=0; s[i]!='\0'; i++)
+    {
+		if( strchr(VOCALES, s[i]) )
+        {
+			res++;
+        }
+    }
+	return res;	
+}
+int count_consonants_in_string(char * s)
+{
+	// FUNCIONA
+	// Cuenta el número de consonantes alfanuméricos en el string 
+	// hasta la llegada del fin de cadena '\0' 
+	int res = 0;
+	int i; 
+	for(i=0; s[i]!='\0'; i++)
+    {
+		if( strchr(CONSONANTES, s[i]) )
+        {
+			res++;
+        }
+    }
+	return res;	
 }
