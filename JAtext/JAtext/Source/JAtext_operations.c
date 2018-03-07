@@ -23,7 +23,7 @@ FILE * option_load_file(FILE * fp)
     scanf("%s", filename);
     printf("\nNombre elegido: %s", filename);
     
-    fp = fopen(filename, "r");
+    fp = fopen(filename, "r+"); // r+ abre archivo existente para lectura y modificación
     if ( fp == NULL ) 
     {
         printf("\nError en archivo");
@@ -118,10 +118,66 @@ void option_insert_line_index_file(FILE * fp)
     printf("\nEstamos en la opción: (3.4) Insertar linea en posición X\n");
 
 }
+
+// No funciona correctamente todavía, el archivo original no se borra completamente si no que lo sobreescribe dejando restos
 void option_del_line(FILE * fp)
 {
+    char buff[MAX_LINE_TAM]; 
+    int indice = 0;
+    int linea = 0; 
+    FILE * fpaux = NULL;
+    char * filenameaux = "temp.txt";
+    int ret;
+    
     printf("\nEstamos en la opción: (3.5) Eliminar linea\n");
+    
+    // obtenemos el indice de la linea
+    printf("\nEscribe el indice de la linea a eliminar (0, 1, 2, etc): ");
+    scanf("%d", &linea);
+    printf("\nHas elegido linea = %d", linea);
 
+    
+    // abrimos archivo auxiliar
+    fpaux = fopen(filenameaux, "w+"); // crea archivo vacio para escribir en el
+    if ( fpaux == NULL ) 
+    {
+        printf("\nError en archivo auxilar");
+    }
+    printf("\nAbierto el archivo auxilar");
+    // copiamos el archivo fp en fpaux EXCEPTO la linea elegida
+    while(fgets(buff, MAX_LINE_TAM, (FILE*)fp)) // recorre el archivo fila a fila mientras no encuentre EOF
+    {
+        if( linea != indice ) // copia string en archivo aux
+        {
+            fputs(buff, fpaux);
+        }
+        indice++;
+        //printf("\n[%d] : %s", indice, buff);
+        //indice++;
+    }
+    rewind(fp); // reinicia el puntero al principio del archivo
+    rewind(fpaux); // reinicia el puntero al principio del archivo
+
+    // copiamos el archivo fpaux en fp
+    while(fgets(buff, MAX_LINE_TAM, (FILE*)fpaux)) // recorre el archivo fila a fila mientras no encuentre EOF
+    {
+        fputs(buff, fp);
+    }
+    rewind(fp); // reinicia el puntero al principio del archivo
+    rewind(fpaux); // reinicia el puntero al principio del archivo
+    
+    //liberamos la memoria de fpaux y borramos archivo
+    fclose(fpaux);
+    printf("\nHAsta aquí bien");
+    ret = remove(filenameaux);
+
+    if(ret == 0) 
+    {
+        printf("File aux deleted successfully");
+    }   else 
+    {
+        printf("Error: unable to delete the file aux");
+    }
 }
 
 void option_save_file(FILE * fp)
