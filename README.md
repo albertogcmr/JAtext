@@ -4,6 +4,7 @@ Colaborative C project: Text editor
 ##################################
 ##            Autores           ##
 ##################################
+
 garcia.cobo.alberto@gmail.com
 jesus alvarez
 
